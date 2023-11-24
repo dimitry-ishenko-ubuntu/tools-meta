@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# read_bool <message> [y|n]
+read_bool()
+{
+    local p="[y/n]" d="${2^}" r
+    [[ -n "$d" ]] && p="${p/${d,}/$d}"
+
+    while :; do
+        echo -n "$1"; read -p " $p " r
+
+        [[ "${r:-$d}" == [Yy] ]] && return 0
+        [[ "${r:-$d}" == [Nn] ]] && return 1
+    done
+}

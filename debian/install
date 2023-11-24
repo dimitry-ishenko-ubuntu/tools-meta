@@ -1,0 +1,5 @@
+colors read_bool sleep_until synchro usr/bin
+
+.bash_aliases etc/skel
+init.vim etc/skel/.config/nvim
+synchro.conf etc

@@ -1,0 +1,110 @@
+#!/bin/bash
+
+source colors    || exit 1
+source read_bool || exit 1
+
+conf_file=/etc/synchro.conf
+source_dirs="/etc /home /root"
+exclude="*"
+backup_dir=/path/to/backup/dir
+
+if ! source "$conf_file" 2>/dev/null; then
+    echo -n "Config file is missing: "; red "$conf_file"
+    die
+fi
+
+check_backup_dir_or_die()
+{
+    if [[ ! -d "$backup_dir" ]]; then
+        echo -n "Backup dir does not exist: "; red "$backup_dir"
+        die
+    fi
+}
+
+backup()
+{
+    check_backup_dir_or_die
+
+    mkdir -p "${backup_dir}/backup.0"
+    rsync -avHAX --delete --exclude-from=- ${source_dirs[@]} "${backup_dir}/backup.0/" <<< "$exclude"
+}
+
+display()
+{
+    check_backup_dir_or_die
+
+    echo -n "Backups in: "; notice "$backup_dir"
+    cd "$backup_dir"
+
+    echo
+    ls -ldv backup.[0-9] backup.[0-9][0-9] 2>/dev/null
+}
+
+remove()
+{
+    check_backup_dir_or_die
+    
+    cd "$backup_dir"
+    local backup=$(ls -1dv backup.[0-9] backup.[0-9][0-9] 2>/dev/null | tail  -n1)
+
+    red -n "[delete]"; echo " $backup"
+    rm -rI "$backup" || die "FAILED"
+}
+
+rotate()
+{
+    check_backup_dir_or_die
+
+    cd "$backup_dir"
+    local backups=$(ls -1dvr backup.[0-9] backup.[0-9][0-9] 2>/dev/null)
+
+    for backup in $backups; do
+        local n=${backup#backup.}
+        local new_backup="backup.$((n+1))" 
+
+        green -n "[rename]"; echo " $backup -> $new_backup"
+        mv -T "$backup" "$new_backup" || die "FAILED"
+    done
+
+    yellow -n "[mirror]"; echo " $new_backup -> backup.0"
+    cp -al "$new_backup" backup.0 || die "FAILED"
+    touch backup.0
+}
+
+rotate_back()
+{
+    check_backup_dir_or_die
+
+    cd "$backup_dir"
+    local backups=$(ls -1dv backup.[0-9] backup.[0-9][0-9] 2>/dev/null)
+
+    for backup in $backups; do
+        local n=${backup#backup.}
+        local new_backup="backup.$((n-1))" 
+
+        if ((n == 0)); then
+            red -n "[delete]"; echo " $backup"
+            rm -rI "$backup" || die "FAILED"
+        else
+            green -n "[rename]"; echo " $backup -> $new_backup"
+            mv -T "$backup" "$new_backup" || die "FAILED"
+        fi
+    done
+}
+
+usage()
+{
+    echo -n "Usage: $(basename "$0") [action]
+
+Where <action> is one of "; notice -n "backup"; echo -n ", "; notice -n "remove"; echo -n " or "; notice -n "rotate"; echo "."
+}
+
+case "$1" in
+    "") display;;
+    backup) backup;;
+    -h|--help) usage;;
+    remove) remove "$@";;
+    rotate) rotate;;
+    rotate_back) rotate_back;;
+    *) usage; die "Invalid action";;
+esac

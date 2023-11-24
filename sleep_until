@@ -1,0 +1,5 @@
+#!/bin/bash
+if s=`date -d "$1" +%s`; then
+    s=$((s - `date +%s`))
+    ((s > 0)) && sleep $s
+fi

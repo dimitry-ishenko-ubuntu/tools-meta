@@ -1,0 +1,98 @@
+#!/bin/bash
+
+####################
+declare -x -A _ANSI_colors=(
+    [black]=0
+    [red]=1
+    [green]=2
+    [yellow]=3
+    [blue]=4
+    [magenta]=5
+    [cyan]=6
+    [white]=7
+)
+
+declare -x -A _ANSI_attrs=(
+    [bright]=1
+    [dim]=2
+    [under]=4
+    [blink]=5
+    [invert]=7
+    [hidden]=8
+)
+
+declare -x _ANSI_fore=3 _ANSI_back=4
+
+####################
+# Usage: color [<fore>][:[<back>]]
+# where <fore> and <back> are in the form [<attr>-[<attr>-[...[attr-]]]]<color>
+color()
+{
+    local fore= back=
+    IFS=":" read fore back <<< "$1"
+
+    local fore_attrs= back_attrs=
+    IFS="-" read -a fore_attrs <<< "$fore"
+    IFS="-" read -a back_attrs <<< "$back"
+
+    local -i idx=${#fore_attrs[@]}-1
+    if (( idx >= 0 )); then
+        fore=${fore_attrs[$idx]}
+        unset fore_attrs[$idx]
+    fi
+
+    local -i idx=${#back_attrs[@]}-1
+    if (( idx >= 0 )); then
+        back=${back_attrs[$idx]}
+        unset back_attrs[$idx]
+    fi
+
+    local color= attr=
+    if [[ -n "$fore" ]]; then
+        for attr in "${fore_attrs[@]}"; do
+            color+=";${_ANSI_attrs[$attr]}"
+        done
+        color+=";${_ANSI_fore}${_ANSI_colors[$fore]}"
+    fi
+
+    if [[ -n "$back" ]]; then
+        for attr in "${back_attrs[@]}"; do
+            color+=";${_ANSI_attrs[$attr]}"
+        done
+        color+=";${_ANSI_back}${_ANSI_colors[$back]}"
+    fi
+
+    color=${color:1}
+
+    echo -en "\e[${color:-0}m"
+}
+
+# Usage: colored [<fore>][:[<back>]] ...
+colored()
+{
+    color "$1"
+    shift
+    echo "$@"
+    color
+}
+
+####################
+  black() { colored black         "$@"; }
+    red() { colored red           "$@"; }
+  green() { colored green         "$@"; }
+ yellow() { colored yellow        "$@"; }
+   blue() { colored blue          "$@"; }
+magenta() { colored magenta       "$@"; }
+   cyan() { colored cyan          "$@"; }
+  white() { colored white         "$@"; }
+
+ notice() { colored bright-white  "$@"; }
+   warn() { colored bright-yellow "$@"; }
+  error() { colored bright-red    "$@"; }
+success() { colored bright-green  "$@"; }
+
+die()
+{
+    error "$@" >&2
+    exit 1
+}
