@@ -1,5 +1,7 @@
-tools-meta (2.0) UNRELEASED; urgency=medium
+tools-meta (2.0) unstable; urgency=medium
 
-  * Initial Release.
+  * Add blurb
+  * Add license
+  * Add workflow to build Ubuntu packages
 
- -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Fri, 28 Feb 2020 15:16:44 -0500
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Fri, 24 Nov 2023 12:28:58 -0500
