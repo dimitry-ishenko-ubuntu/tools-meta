@@ -1,3 +1,11 @@
+tools-meta (2.2) unstable; urgency=medium
+
+  * Add maps and aliases
+  * gbp belongs in dev-meta
+  * Add vim as an alternative
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Tue, 28 Nov 2023 18:39:17 -0500
+
 tools-meta (2.1) unstable; urgency=medium
 
   * Update init.vim
