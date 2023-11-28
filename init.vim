@@ -23,10 +23,10 @@ let FindL = { -> (filter(getwininfo(), { _, v -> v.loclist }) + [#{ winnr: 0 }])
 let FindQ = { -> (filter(getwininfo(), { _, v -> v.quickfix && !v.loclist }) + [#{ winnr: 0 }])[0].winnr }
 let FindW = { var, val -> (filter(range(1, winnr("$")), { _, n -> getwinvar(n, var) == val }) + [0])[0] }
 
-command Close  exec FindW("&pvw", 1) ? "pc" : FindW("&filetype", "netrw") ? "Lex" : FindL() ? "lcl" : FindQ() ? "ccl" : ""
-command Files  let w = FindW("&filetype", "netrw") | exec w ? w .. "wincmd w": "Lex"
-command Term   bot 10sp +term
-command Unload exec winnr("$") > 1 ? "b#|bd#" : "bd"
+command Close exec FindW("&pvw", 1) ? "pc" : FindW("&filetype", "netrw") ? "Lex" : FindL() ? "lcl" : FindQ() ? "ccl" : ""
+command Files let w = FindW("&filetype", "netrw") | exec w ? w .. "wincmd w": "Lex"
+command Term  bot 10sp +term
+command -bang Unload exec winnr("$") > 1 ? "b#|bd<bang>#" : "bd<bang>"
 
 command -nargs=+ Rg  exec "cexpr system('rg --vimgrep " .. <q-args> .. "')"
 command -nargs=+ LRg exec "lexpr system('rg --vimgrep " .. <q-args> .. "')"
@@ -35,6 +35,7 @@ command -nargs=+ LRg exec "lexpr system('rg --vimgrep " .. <q-args> .. "')"
 Alias bu  Unload
 Alias lrg LRg
 Alias rg  Rg
+Alias wc  w\|wincmd\ c
 Alias wd  w\|bd
 Alias wu  w\|Unload
 
@@ -54,11 +55,13 @@ nmap <leader>\ :Files<cr>
 nmap <leader>b :ls<cr>:b
 nmap <leader>c <c-w>c
 nmap <leader>d :bd<cr>
+nmap <leader>D :bd!<cr>
 nmap <leader>h :noh<cr>
 nmap <leader>l :lw<cr>
 nmap <leader>q :cw<cr>
 nmap <leader>t :Term<cr>
-nmap <leader>u :Unload<cr>
+nmap <leader>u :bu<cr>
+nmap <leader>U :bu!<cr>
 vmap <silent> <leader>y :call Clip()<cr>
 
 nmap <silent> <esc><esc> :Close<cr>
@@ -111,7 +114,6 @@ set relativenumber
 set shiftwidth=4
 set signcolumn=yes
 set smartindent
-set statuscolumn=%s%=%{v:relnum?v:relnum:v:lnum}╽
 set tabstop=4
 
 "options (location/quickfix)
