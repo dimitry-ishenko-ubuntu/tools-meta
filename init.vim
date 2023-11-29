@@ -135,6 +135,5 @@ augroup InitNetrw
     autocmd!
     autocmd FileType netrw nmap <buffer> <tab> mf
     autocmd FileType netrw nmap <buffer> <s-tab> mF
-    autocmd FileType netrw nmap <buffer> <m-tab> mu
     autocmd FileType netrw setl bufhidden=wipe
 augroup end
