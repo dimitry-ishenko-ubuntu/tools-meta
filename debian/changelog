@@ -1,3 +1,9 @@
+tools-meta (2.3) unstable; urgency=medium
+
+  * Use vim as man viewer
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Tue, 05 Dec 2023 22:29:00 -0500
+
 tools-meta (2.2.1) unstable; urgency=medium
 
   * <m-tab> will never work
