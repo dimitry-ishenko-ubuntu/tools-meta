@@ -8,5 +8,7 @@ alias sl="sudo su --login"
 
 export HISTCONTROL=ignoreboth
 
-export MANPAGER="nvim +Man!"
-export MANWIDTH=999
+if [[ -x $(command -v nvim) ]]; then
+    export MANPAGER="nvim +Man!"
+    export MANWIDTH=999
+fi
