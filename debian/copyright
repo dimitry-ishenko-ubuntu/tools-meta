@@ -1,0 +1,7 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: tools-meta
+Source: https://github.com/dimitry-ishenko-ubuntu/tools-meta
+
+Files: *
+Copyright: 2023 Dimitry Ishenko <dimitry.ishenko@gmail.com>
+License: GPL-3.0+
