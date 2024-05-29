@@ -10,5 +10,4 @@ export HISTCONTROL=ignoreboth
 
 if [[ -x $(command -v nvim) ]]; then
     export MANPAGER="nvim +Man!"
-    export MANWIDTH=999
 fi
