@@ -44,9 +44,9 @@ highlight CursorLineNr cterm=NONE
 highlight LineNr ctermfg=darkgray
 
 highlight DiffAdd    ctermbg=darkgreen
-highlight DiffChange ctermbg=darkyellow
-highlight DiffDelete ctermbg=darkred
-highlight DiffText   ctermbg=yellow
+highlight DiffChange ctermbg=darkblue
+highlight DiffDelete ctermbg=darkred ctermfg=darkred
+highlight DiffText   ctermbg=darkyellow
 
 highlight SignColumn ctermbg=NONE
 
@@ -67,13 +67,18 @@ vmap <silent> <leader>y :call Clip()<cr>
 nmap <silent> <esc><esc> :Close<cr>
 tmap <esc><esc> <C-\><C-n>
 
+nmap <silent> [{ ?{<cr>:noh<cr>
+nmap <silent> [} ?}<cr>:noh<cr>
+nmap <silent> ]{ /{<cr>:noh<cr>
+nmap <silent> ]} /}<cr>:noh<cr>
+
 "maps (buffer)
 nmap <silent> [B :bfirst<cr>
 nmap <silent> [b :bprev<cr>
 nmap <silent> ]b :bnext<cr>
 nmap <silent> ]B :blast<cr>
 
-"maps (location)
+"maps (local)
 nmap <silent> [L :lfirst<cr>
 nmap <silent> [l :lprev<cr>
 nmap <silent> ]l :lnext<cr>
