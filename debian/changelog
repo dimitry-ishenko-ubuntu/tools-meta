@@ -1,3 +1,11 @@
+tools-meta (2.6) unstable; urgency=medium
+
+  * Add copyright file
+  * Breaks rendering
+  * Update init.vim
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Tue, 28 May 2024 22:16:39 -0400
+
 tools-meta (2.5) unstable; urgency=medium
 
   * Not using workflows
