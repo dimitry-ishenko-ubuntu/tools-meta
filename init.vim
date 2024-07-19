@@ -44,7 +44,7 @@ highlight LineNr ctermfg=darkgray
 
 highlight DiffAdd    ctermbg=darkgreen
 highlight DiffChange ctermbg=darkblue
-highlight DiffDelete ctermbg=darkred ctermfg=darkred
+highlight DiffDelete ctermbg=darkred
 highlight DiffText   ctermbg=darkyellow
 
 highlight SignColumn ctermbg=NONE
