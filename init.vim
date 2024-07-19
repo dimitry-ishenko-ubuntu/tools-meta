@@ -23,8 +23,7 @@ let FindL = { -> (filter(getwininfo(), { _, v -> v.loclist }) + [#{ winnr: 0 }])
 let FindQ = { -> (filter(getwininfo(), { _, v -> v.quickfix && !v.loclist }) + [#{ winnr: 0 }])[0].winnr }
 let FindW = { var, val -> (filter(range(1, winnr("$")), { _, n -> getwinvar(n, var) == val }) + [0])[0] }
 
-command Close exec FindW("&pvw", 1) ? "pc" : FindW("&filetype", "netrw") ? "Lex" : FindL() ? "lcl" : FindQ() ? "ccl" : ""
-command Files let w = FindW("&filetype", "netrw") | exec w ? w .. "wincmd w": "Lex"
+command Close exec FindW("&pvw", 1) ? "pc" : FindL() ? "lcl" : FindQ() ? "ccl" : ""
 command Term  bot 10sp +term
 command -bang Unload exec winnr("$") > 1 ? "b#|bd<bang>#" : "bd<bang>"
 
@@ -51,7 +50,6 @@ highlight DiffText   ctermbg=darkyellow
 highlight SignColumn ctermbg=NONE
 
 "maps
-nmap <leader>\ :Files<cr>
 nmap <leader>b :ls<cr>:b
 nmap <leader>c <c-w>c
 nmap <leader>d :bd<cr>
@@ -128,17 +126,3 @@ augroup InitLQ
     autocmd QuickFixCmdPost [^Ll]* cw
 augroup end
 
-"options (netrw)
-let g:netrw_fast_browse = 0
-let g:netrw_list_hide = ".*\.swp$"
-let g:netrw_liststyle = 3
-let g:netrw_sort_sequence = "[\/]$"
-let g:netrw_sort_options = "i"
-let g:netrw_winsize = 30
-
-augroup InitNetrw
-    autocmd!
-    autocmd FileType netrw nmap <buffer> <tab> mf
-    autocmd FileType netrw nmap <buffer> <s-tab> mF
-    autocmd FileType netrw setl bufhidden=wipe
-augroup end
