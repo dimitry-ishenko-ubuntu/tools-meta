@@ -1,3 +1,11 @@
+tools-meta (2.7) unstable; urgency=medium
+
+  * init.vim: terminal auto-insert
+  * init.vim: DiffDelete is needed for gitsigns
+  * init.vim: netrw is being replaced by oil
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Thu, 18 Jul 2024 21:28:29 -0400
+
 tools-meta (2.6) unstable; urgency=medium
 
   * Add copyright file
