@@ -50,60 +50,60 @@ highlight DiffText   ctermbg=darkyellow
 highlight SignColumn ctermbg=NONE
 
 "maps
-nmap <leader>b :ls<cr>:b
-nmap <leader>c <c-w>c
-nmap <leader>d :bd<cr>
-nmap <leader>D :bd!<cr>
-nmap <leader>h :noh<cr>
-nmap <leader>l :lw<cr>
-nmap <leader>q :cw<cr>
-nmap <leader>t :Term<cr>
-nmap <leader>u :bu<cr>
-nmap <leader>U :bu!<cr>
-vmap <silent> <leader>y :call Clip()<cr>
+nnoremap <leader>b :ls<cr>:b
+nnoremap <leader>c <c-w>c
+nnoremap <leader>d :bd<cr>
+nnoremap <leader>D :bd!<cr>
+nnoremap <leader>h :noh<cr>
+nnoremap <leader>l :lw<cr>
+nnoremap <leader>q :cw<cr>
+nnoremap <leader>t :Term<cr>
+nnoremap <leader>u :bu<cr>
+nnoremap <leader>U :bu!<cr>
+vnoremap <silent> <leader>y :call Clip()<cr>
 
-nmap <silent> <esc><esc> :Close<cr>
-tmap <esc><esc> <C-\><C-n>
+nnoremap <silent> <esc><esc> :Close<cr>
+tnoremap <esc><esc> <C-\><C-n>
 
-nmap <silent> [{ ?{<cr>:noh<cr>
-nmap <silent> [} ?}<cr>:noh<cr>
-nmap <silent> ]{ /{<cr>:noh<cr>
-nmap <silent> ]} /}<cr>:noh<cr>
+nnoremap <silent> [{ ?{<cr>:noh<cr>
+nnoremap <silent> [} ?}<cr>:noh<cr>
+nnoremap <silent> ]{ /{<cr>:noh<cr>
+nnoremap <silent> ]} /}<cr>:noh<cr>
 
 "maps (buffer)
-nmap <silent> [B :bfirst<cr>
-nmap <silent> [b :bprev<cr>
-nmap <silent> ]b :bnext<cr>
-nmap <silent> ]B :blast<cr>
+nnoremap <silent> [B :bfirst<cr>
+nnoremap <silent> [b :bprev<cr>
+nnoremap <silent> ]b :bnext<cr>
+nnoremap <silent> ]B :blast<cr>
 
 "maps (local)
-nmap <silent> [L :lfirst<cr>
-nmap <silent> [l :lprev<cr>
-nmap <silent> ]l :lnext<cr>
-nmap <silent> ]L :llast<cr>
+nnoremap <silent> [L :lfirst<cr>
+nnoremap <silent> [l :lprev<cr>
+nnoremap <silent> ]l :lnext<cr>
+nnoremap <silent> ]L :llast<cr>
 
 "maps (quickfix)
-nmap <silent> [Q :cfirst<cr>
-nmap <silent> [q :cprev<cr>
-nmap <silent> ]q :cnext<cr>
-nmap <silent> ]Q :clast<cr>
+nnoremap <silent> [Q :cfirst<cr>
+nnoremap <silent> [q :cprev<cr>
+nnoremap <silent> ]q :cnext<cr>
+nnoremap <silent> ]Q :clast<cr>
 
 "maps (tab)
-nmap <silent> [T :tabr<cr>
-nmap <silent> [t :tabp<cr>
-nmap <silent> ]t :tabn<cr>
-nmap <silent> ]T :tabl<cr>
+nnoremap <silent> [T :tabr<cr>
+nnoremap <silent> [t :tabp<cr>
+nnoremap <silent> ]t :tabn<cr>
+nnoremap <silent> ]T :tabl<cr>
 
 "maps (window)
-nmap <c-h> <c-w>h
-nmap <c-j> <c-w>j
-nmap <c-k> <c-w>k
-nmap <c-l> <c-w>l
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
-nmap <m-=> <c-w>+
-nmap <m--> <c-w>-
-nmap <m-,> <c-w><
-nmap <m-.> <c-w>>
+nnoremap <m-=> <c-w>+
+nnoremap <m--> <c-w>-
+nnoremap <m-,> <c-w><
+nnoremap <m-.> <c-w>>
 
 "options
 set cursorline
