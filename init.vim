@@ -126,3 +126,5 @@ augroup InitLQ
     autocmd QuickFixCmdPost [^Ll]* cw
 augroup end
 
+"options (term)
+autocmd TermOpen,BufEnter * if &buftype == "terminal" | startinsert | endif
