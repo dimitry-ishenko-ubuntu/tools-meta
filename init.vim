@@ -117,6 +117,7 @@ set relativenumber
 set shiftwidth=4
 set signcolumn=yes
 set smartindent
+set splitright
 set tabstop=4
 
 "options (location/quickfix)
