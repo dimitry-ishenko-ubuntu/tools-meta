@@ -1,3 +1,9 @@
+tools-meta (2.8) unstable; urgency=medium
+
+  * Depend on oil-nvim
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Thu, 18 Jul 2024 23:45:12 -0400
+
 tools-meta (2.7) unstable; urgency=medium
 
   * init.vim: terminal auto-insert
