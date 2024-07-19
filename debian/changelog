@@ -1,3 +1,10 @@
+tools-meta (2.10) unstable; urgency=medium
+
+  * init.vim: nnoremap doesn't work
+  * init.vim: fix Clip() and -> Xclip()
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Fri, 19 Jul 2024 17:07:44 -0400
+
 tools-meta (2.9) unstable; urgency=medium
 
   * Don't remap
