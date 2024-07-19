@@ -4,16 +4,18 @@ function Alias(name, val)
 endfunction
 command -nargs=+ Alias call Alias(<f-args>)
 
-function Clip()
+function Xclip()
     let [lb, cb] = getpos("'<")[1:2]
     let [le, ce] = getpos("'>")[1:2]
     let lines = getline(lb, le)
     if len(lines) > 0
         if visualmode() == "\<c-v>"
             let lines = map(lines, { _, v -> v[cb - 1 : ce - 1] })
-        else
+        elseif len(lines) > 1
             let lines[ 0] = lines[ 0][cb - 1 : ]
             let lines[-1] = lines[-1][ : ce - 1]
+        else
+            let lines[ 0] = lines[ 0][cb - 1 : ce - 1]
         endif
     endif
     call system("xclip -in -selection clipboard", join(lines, "\n"))
@@ -60,7 +62,7 @@ nnoremap <leader>q :cw<cr>
 nnoremap <leader>t :Term<cr>
 nnoremap <leader>u :bu<cr>
 nnoremap <leader>U :bu!<cr>
-vnoremap <silent> <leader>y :call Clip()<cr>
+vnoremap <silent> <leader>y :call Xclip()<cr>
 
 nnoremap <silent> <esc><esc> :Close<cr>
 tnoremap <esc><esc> <C-\><C-n>
