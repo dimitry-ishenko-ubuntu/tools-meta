@@ -1,3 +1,9 @@
+tools-meta (2.11) unstable; urgency=medium
+
+  * Depend on telescope-nvim
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sat, 20 Jul 2024 01:10:05 -0400
+
 tools-meta (2.10) unstable; urgency=medium
 
   * init.vim: nnoremap doesn't work
