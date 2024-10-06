@@ -10,3 +10,4 @@ Package: tools-meta
 Architecture: all
 Depends: byobu, bzip2, cifs-utils, exfatprogs, fzf, htop, mc, neovim, net-tools, nmap, oil-nvim, openssh-server, rename, ripgrep, rsync, screen, socat, sshfs, telescope-nvim, vim-airline, zip
 Description: tools-meta
+ Basic tools
