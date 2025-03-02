@@ -42,7 +42,7 @@ Alias wu  w\|Unload
 
 "highlights
 highlight CursorLineNr cterm=NONE
-highlight LineNr ctermfg=darkgray
+highlight LineNr     ctermfg=darkgray
 
 highlight DiffAdd    ctermbg=darkgreen
 highlight DiffChange ctermbg=darkblue
@@ -60,8 +60,8 @@ nnoremap <leader>h :noh<cr>
 nnoremap <leader>l :lw<cr>
 nnoremap <leader>q :cw<cr>
 nnoremap <leader>t :Term<cr>
-nmap <leader>u :bu<cr>
-nmap <leader>U :bu!<cr>
+nmap     <leader>u :bu<cr>
+nmap     <leader>U :bu!<cr>
 vnoremap <silent> <leader>y :call Xclip()<cr>
 
 nnoremap <silent> <esc><esc> :Close<cr>
