@@ -1,3 +1,12 @@
+tools-meta (2.12) unstable; urgency=medium
+
+  * Install airline.vim
+  * init.vim: spelling support
+  * init.vim: formatting
+  * Update description
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sat, 01 Mar 2025 22:28:18 -0500
+
 tools-meta (2.11) unstable; urgency=medium
 
   * Depend on telescope-nvim
