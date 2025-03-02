@@ -51,6 +51,10 @@ highlight DiffText   ctermbg=darkyellow
 
 highlight SignColumn ctermbg=NONE
 
+highlight SpellBad   ctermbg=NONE cterm=undercurl
+highlight SpellCap   ctermbg=NONE cterm=undercurl
+highlight SpellRare  ctermbg=NONE cterm=undercurl
+
 "maps
 nnoremap <leader>b :ls<cr>:b
 nnoremap <leader>c <c-w>c
@@ -63,6 +67,9 @@ nnoremap <leader>t :Term<cr>
 nmap     <leader>u :bu<cr>
 nmap     <leader>U :bu!<cr>
 vnoremap <silent> <leader>y :call Xclip()<cr>
+
+nnoremap zr :spellr<cr>
+nnoremap <silent> <leader>z :setlocal spell! spell?<cr>
 
 nnoremap <silent> <esc><esc> :Close<cr>
 tnoremap <esc><esc> <C-\><C-n>
