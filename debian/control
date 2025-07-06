@@ -18,7 +18,7 @@ Depends:
  htop,
  lualine-nvim,
  mc,
- neovim,
+ neovim (>= 0.10),
  net-tools,
  nmap,
  oil-nvim,
