@@ -2,12 +2,33 @@ Source: tools-meta
 Priority: optional
 Section: metapackages
 Maintainer: Dimitry Ishenko <dimitry.ishenko@gmail.com>
-Build-Depends: debhelper-compat (= 12)
+Build-Depends:
+ debhelper-compat (= 12),
 Standards-Version: 4.6.0
 Rules-Requires-Root: no
 
 Package: tools-meta
 Architecture: all
-Depends: byobu, bzip2, cifs-utils, exfatprogs, fzf, htop, mc, neovim, net-tools, nmap, oil-nvim, openssh-server, rename, ripgrep, rsync, screen, socat, sshfs, telescope-nvim, vim-airline, zip
-Description: tools-meta
- Basic tools
+Depends:
+ byobu,
+ bzip2,
+ cifs-utils,
+ exfatprogs,
+ fzf,
+ htop,
+ mc,
+ neovim,
+ net-tools,
+ nmap,
+ oil-nvim,
+ openssh-server,
+ rename,
+ ripgrep,
+ rsync,
+ screen,
+ socat,
+ sshfs,
+ telescope-nvim,
+ vim-airline,
+ zip
+Description: Basic tools
