@@ -3,8 +3,8 @@ Priority: optional
 Section: metapackages
 Maintainer: Dimitry Ishenko <dimitry.ishenko@gmail.com>
 Build-Depends:
- debhelper-compat (= 12),
-Standards-Version: 4.6.0
+ debhelper-compat (= 13),
+Standards-Version: 4.6.2
 Rules-Requires-Root: no
 
 Package: tools-meta
@@ -31,4 +31,6 @@ Depends:
  telescope-nvim,
  vim-airline,
  zip
+Recommends:
+ nightfox-nvim,
 Description: Basic tools
