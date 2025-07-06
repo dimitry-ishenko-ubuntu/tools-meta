@@ -16,6 +16,7 @@ Depends:
  exfatprogs,
  fzf,
  htop,
+ lualine-nvim,
  mc,
  neovim,
  net-tools,
@@ -29,7 +30,6 @@ Depends:
  socat,
  sshfs,
  telescope-nvim,
- vim-airline,
  zip
 Recommends:
  nightfox-nvim,
