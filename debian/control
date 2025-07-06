@@ -29,8 +29,8 @@ Depends:
  screen,
  socat,
  sshfs,
- telescope-nvim,
  zip
 Recommends:
  nightfox-nvim,
+ telescope-nvim,
 Description: Basic tools
