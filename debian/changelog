@@ -1,3 +1,11 @@
+tools-meta (3.1) unstable; urgency=medium
+
+  * init.lua: make terminals less annoying
+  * d/control: revert name
+  * init.lua: Lua style
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Mon, 07 Jul 2025 01:40:30 -0400
+
 tools-meta (3.0) unstable; urgency=medium
 
   * d/copyright: update
