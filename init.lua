@@ -57,6 +57,18 @@ map("n", "<m-->", "<c-w>-")
 map("n", "<m-,>", "<c-w><")
 map("n", "<m-.>", "<c-w>>")
 
+-- terminal
+map("t", "<esc><esc>", "<c-\\><c-n>")
+
+vim.api.nvim_create_autocmd({"TermOpen", "BufEnter"}, {
+    pattern = "*",
+    callback = function()
+        if vim.bo.buftype == "terminal" then
+            vim.cmd("startinsert")
+        end
+    end
+})
+
 -- Diagnostic
 vim.diagnostic.config({
     signs = { text = {
