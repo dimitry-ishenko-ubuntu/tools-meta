@@ -3,7 +3,7 @@ vim.opt.completeopt = {"menu", "menuone", "noinsert"}
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 vim.opt.expandtab = true
-vim.opt.fillchars = "eob:·"
+vim.opt.fillchars = {eob = "·"}
 vim.opt.hidden = true
 vim.opt.number = true
 vim.opt.numberwidth = 3
