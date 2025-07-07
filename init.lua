@@ -41,16 +41,16 @@ create_alias("wc", "w\\|wincmd c")
 create_alias("wd", "w\\|bd")
 
 -- Basic maps
-map("n", "<leader>b", ":ls<cr>:b")
+map("n", "<leader>b", "<cmd>ls<cr>:b")
 map("n", "<leader>c", "<c-w>c")
-map("n", "<leader>d", ":bd<cr>")
-map("n", "<leader>D", ":bd!<cr>")
-map("n", "<leader>h", ":noh<cr>")
+map("n", "<leader>d", "<cmd>bd<cr>")
+map("n", "<leader>D", "<cmd>bd!<cr>")
+map("n", "<leader>h", "<cmd>noh<cr>")
 map("n", "<leader>l", toggle_loclist)
 map("n", "<leader>q", toggle_quickfix)
 
-map("n", "zr", ":spellr<cr>")
-map("n", "<leader>z", ":setlocal spell! spell?<cr>")
+map("n", "zr", "<cmd>spellr<cr>")
+map("n", "<leader>z", "<cmd>setlocal spell! spell?<cr>")
 
 map("n", "<m-=>", "<c-w>+")
 map("n", "<m-->", "<c-w>-")
