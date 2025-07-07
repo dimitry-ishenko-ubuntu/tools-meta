@@ -1,3 +1,9 @@
+tools-meta (3.2) unstable; urgency=medium
+
+  * init.lua: use <cmd> where applicable
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Mon, 07 Jul 2025 18:04:04 -0400
+
 tools-meta (3.1) unstable; urgency=medium
 
   * init.lua: make terminals less annoying
