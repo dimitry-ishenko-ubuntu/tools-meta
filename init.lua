@@ -5,6 +5,7 @@ vim.opt.cursorlineopt = "number"
 vim.opt.expandtab = true
 vim.opt.fillchars = {eob = "·"}
 vim.opt.hidden = true
+vim.opt.keywordprg = ":help"
 vim.opt.number = true
 vim.opt.numberwidth = 3
 vim.opt.relativenumber = true
