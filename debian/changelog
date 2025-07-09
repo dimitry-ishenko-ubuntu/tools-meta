@@ -1,3 +1,9 @@
+tools-meta (3.3) unstable; urgency=medium
+
+  * init.lua: default to :help for keywordprg
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Wed, 09 Jul 2025 00:52:21 -0400
+
 tools-meta (3.2) unstable; urgency=medium
 
   * init.lua: use <cmd> where applicable
