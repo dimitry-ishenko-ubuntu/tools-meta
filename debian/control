@@ -29,9 +29,10 @@ Depends:
  screen,
  socat,
  sshfs,
- zip
+ zip,
 Recommends:
  nightfox-nvim,
+ nvim-cmp,
  telescope-nvim,
 Description: toos-meta
  Basic tools
