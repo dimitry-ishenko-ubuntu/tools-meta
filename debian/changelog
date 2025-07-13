@@ -1,3 +1,9 @@
+tools-meta (3.5) unstable; urgency=medium
+
+  * init.lua: switch signs
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sat, 12 Jul 2025 23:11:50 -0400
+
 tools-meta (3.4) unstable; urgency=medium
 
   * d/control: recommend nvim-cmp
