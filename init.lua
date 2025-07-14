@@ -44,13 +44,50 @@ local function toggle_quickfix()
     vim.cmd((qf.winid > 0) and "cclose" or "copen")
 end
 
+function buffer_close(opts)
+    local cur = vim.api.nvim_get_current_buf()
+    local new = nil
+
+    if opts and opts.bang or not vim.bo.modified then
+        for _, win in ipairs(vim.api.nvim_list_wins()) do
+            if vim.api.nvim_win_get_buf(win) == cur then
+                local alt = vim.api.nvim_win_call(win, function() return vim.fn.bufnr("#") end)
+
+                if alt == -1 or alt == cur or not vim.api.nvim_buf_is_loaded(alt) then
+                    alt = nil
+
+                    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+                        if buf ~= cur and vim.api.nvim_buf_is_loaded(buf) and vim.bo[buf].buflisted then
+                            alt = buf
+                            break
+                        end
+                    end
+
+                    if not alt then
+                        if not new then new = vim.api.nvim_create_buf(true, false) end
+                        alt = new
+                    end
+                end
+
+                vim.api.nvim_win_set_buf(win, alt)
+            end
+        end
+        vim.api.nvim_buf_delete(cur, {force = true})
+    else
+        vim.api.nvim_echo({{"Buffer is modified (use ! to override).", "WarningMsg"}}, true, {})
+    end
+end
+
 -- Commands & aliases
+vim.api.nvim_create_user_command("Bclose", buffer_close, {bang = true})
+create_alias("bc", "Bclose")
+
 create_alias("wc", "w\\|wincmd c")
 create_alias("wd", "w\\|bd")
 
 -- Basic maps
 map("n", "<leader>b", "<cmd>ls<cr>:b")
-map("n", "<leader>c", "<c-w>c")
+map("n", "<leader>c", buffer_close)
 map("n", "<leader>d", "<cmd>bd<cr>")
 map("n", "<leader>D", "<cmd>bd!<cr>")
 map("n", "<leader>h", "<cmd>noh<cr>")
@@ -70,7 +107,7 @@ map("n", "<m-->", "<c-w>-")
 map("n", "<m-,>", "<c-w><")
 map("n", "<m-.>", "<c-w>>")
 
--- terminal
+-- Terminal
 map("t", "<esc><esc>", "<c-\\><c-n>")
 
 vim.api.nvim_create_autocmd({"TermOpen", "BufEnter"}, {
