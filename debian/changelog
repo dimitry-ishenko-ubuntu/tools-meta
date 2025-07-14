@@ -1,3 +1,11 @@
+tools-meta (3.6) unstable; urgency=medium
+
+  * init.lua: close buffers keeping window layout
+  * init.lua: highlight trailing whitespace
+  * init.lua: add tab maps
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Mon, 14 Jul 2025 13:00:14 -0400
+
 tools-meta (3.5) unstable; urgency=medium
 
   * init.lua: switch signs
