@@ -50,6 +50,11 @@ map("n", "<leader>h", "<cmd>noh<cr>")
 map("n", "<leader>l", toggle_loclist)
 map("n", "<leader>q", toggle_quickfix)
 
+map("n", "[t", "<cmd>tabprev<cr>")
+map("n", "[T", "<cmd>tabfirst<cr>")
+map("n", "]t", "<cmd>tabnext<cr>")
+map("n", "]T", "<cmd>tablast<cr>")
+
 map("n", "zr", "<cmd>spellr<cr>")
 map("n", "<leader>z", "<cmd>setlocal spell! spell?<cr>")
 
