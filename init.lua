@@ -15,6 +15,13 @@ vim.opt.smartindent = true
 vim.opt.splitright = true
 vim.opt.tabstop = 4
 
+vim.api.nvim_create_autocmd("ColorScheme", {
+    callback = function()
+        vim.cmd("highlight ExtraWhitespace ctermbg=red guibg=red")
+    end
+})
+vim.fn.matchadd("ExtraWhitespace", "\\s\\+$")
+
 -- Functions
 function create_alias(alias, cmd)
     vim.cmd(string.format(
