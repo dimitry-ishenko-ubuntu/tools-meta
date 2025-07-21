@@ -79,6 +79,15 @@ function buffer_close(opts)
 end
 
 -- Commands & aliases
+vim.api.nvim_create_autocmd("QuickFixCmdPost", {
+    pattern = {"[Ll]*"},
+    callback = function() vim.cmd("lwindow") end,
+})
+vim.api.nvim_create_autocmd("QuickFixCmdPost", {
+    pattern = {"[^Ll]*"},
+    callback = function() vim.cmd("cwindow") end,
+})
+
 vim.api.nvim_create_user_command("Bclose", buffer_close, {bang = true})
 create_alias("bc", "Bclose")
 
