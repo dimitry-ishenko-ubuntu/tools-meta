@@ -1,3 +1,9 @@
+tools-meta (3.7) unstable; urgency=medium
+
+  * init.lua: auto-open quickfix and location windows
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Mon, 21 Jul 2025 16:01:44 -0400
+
 tools-meta (3.6) unstable; urgency=medium
 
   * init.lua: close buffers keeping window layout
