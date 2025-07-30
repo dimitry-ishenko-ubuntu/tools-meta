@@ -1,3 +1,9 @@
+tools-meta (3.8) unstable; urgency=medium
+
+  * init.lua: switch back to most recently used buffer
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Wed, 30 Jul 2025 16:26:52 -0400
+
 tools-meta (3.7) unstable; urgency=medium
 
   * init.lua: auto-open quickfix and location windows
