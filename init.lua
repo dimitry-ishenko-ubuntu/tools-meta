@@ -56,9 +56,12 @@ function buffer_close(opts)
                 if alt == -1 or alt == cur or not vim.api.nvim_buf_is_loaded(alt) then
                     alt = nil
 
-                    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-                        if buf ~= cur and vim.api.nvim_buf_is_loaded(buf) and vim.bo[buf].buflisted then
-                            alt = buf
+                    local bufs = vim.fn.getbufinfo({buflisted = 1, bufloaded = 1})
+                    table.sort(bufs, function(a, b) return a.lastused > b.lastused end)
+
+                    for _, buf in ipairs(bufs) do
+                        if buf.bufnr ~= cur then
+                            alt = buf.bufnr
                             break
                         end
                     end
