@@ -1,3 +1,9 @@
+tools-meta (3.9) unstable; urgency=medium
+
+  * Not using nvim-cmp anymore
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Fri, 19 Sep 2025 10:06:31 -0400
+
 tools-meta (3.8) unstable; urgency=medium
 
   * init.lua: switch back to most recently used buffer
