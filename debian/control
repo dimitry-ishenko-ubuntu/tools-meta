@@ -32,7 +32,7 @@ Depends:
  zip,
 Recommends:
  nightfox-nvim,
- nvim-cmp,
+ blink.cmp,
  telescope-nvim,
 Description: toos-meta
  Basic tools
