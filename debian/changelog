@@ -1,3 +1,9 @@
+tools-meta (3.10) unstable; urgency=medium
+
+  * init.lua: use CTRL-L
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Thu, 25 Sep 2025 17:14:30 -0400
+
 tools-meta (3.9) unstable; urgency=medium
 
   * Not using nvim-cmp anymore
