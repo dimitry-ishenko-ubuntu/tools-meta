@@ -102,7 +102,6 @@ map("n", "<leader>b", "<cmd>ls<cr>:b")
 map("n", "<leader>c", buffer_close)
 map("n", "<leader>d", "<cmd>bd<cr>")
 map("n", "<leader>D", "<cmd>bd!<cr>")
-map("n", "<leader>h", "<cmd>noh<cr>")
 map("n", "<leader>l", toggle_loclist)
 map("n", "<leader>q", toggle_quickfix)
 
