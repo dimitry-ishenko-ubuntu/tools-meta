@@ -1,3 +1,9 @@
+tools-meta (3.11) unstable; urgency=medium
+
+  * init.lua: add \C keymap
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sun, 05 Oct 2025 12:05:51 -0400
+
 tools-meta (3.10) unstable; urgency=medium
 
   * init.lua: use CTRL-L
