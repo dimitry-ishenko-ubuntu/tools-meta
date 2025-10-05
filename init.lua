@@ -100,6 +100,7 @@ create_alias("wd", "w\\|bd")
 -- Basic maps
 map("n", "<leader>b", "<cmd>ls<cr>:b")
 map("n", "<leader>c", buffer_close)
+map("n", "<leader>C", function() buffer_close({bang = true}) end)
 map("n", "<leader>d", "<cmd>bd<cr>")
 map("n", "<leader>D", "<cmd>bd!<cr>")
 map("n", "<leader>l", toggle_loclist)
