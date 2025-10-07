@@ -1,3 +1,10 @@
+tools-meta (3.13) unstable; urgency=medium
+
+  * Use tmux instead of byobu
+  * init.lua: simplify window navigation
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Tue, 07 Oct 2025 17:09:21 -0400
+
 tools-meta (3.12) unstable; urgency=medium
 
   * init.lua: add n s t and v keymaps
