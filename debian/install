@@ -1,5 +1,5 @@
 colors read_bool sleep_until synchro usr/bin
 
-.bash_aliases etc/skel
+.bash_aliases .tmux.conf etc/skel
 init.lua etc/skel/.config/nvim
 synchro.conf etc

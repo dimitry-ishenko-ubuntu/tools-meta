@@ -10,7 +10,6 @@ Rules-Requires-Root: no
 Package: tools-meta
 Architecture: all
 Depends:
- byobu,
  bzip2,
  cifs-utils,
  exfatprogs,
@@ -29,6 +28,7 @@ Depends:
  screen,
  socat,
  sshfs,
+ tmux,
  zip,
 Recommends:
  nightfox-nvim,
