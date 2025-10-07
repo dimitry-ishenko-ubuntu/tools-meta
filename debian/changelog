@@ -1,3 +1,9 @@
+tools-meta (3.13.1) unstable; urgency=medium
+
+  * tmux.conf: fix
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Tue, 07 Oct 2025 18:23:56 -0400
+
 tools-meta (3.13) unstable; urgency=medium
 
   * Use tmux instead of byobu
