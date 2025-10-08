@@ -1,3 +1,9 @@
+tools-meta (3.14) unstable; urgency=medium
+
+  * tmux.conf: move status bar to the top and show windows
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Tue, 07 Oct 2025 23:21:05 -0400
+
 tools-meta (3.13.1) unstable; urgency=medium
 
   * tmux.conf: fix
