@@ -1,3 +1,9 @@
+tools-meta (3.16) unstable; urgency=medium
+
+  * tmux.conf: vi mode search
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Wed, 08 Oct 2025 18:25:53 -0400
+
 tools-meta (3.15) unstable; urgency=medium
 
   * tmux.conf: reorganize
