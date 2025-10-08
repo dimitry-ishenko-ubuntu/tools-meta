@@ -1,3 +1,11 @@
+tools-meta (3.15) unstable; urgency=medium
+
+  * tmux.conf: reorganize
+  * init.lua: use \ for splits, remove nav for now
+  * init.lua: buffer_close => buffer_unload
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Wed, 08 Oct 2025 18:01:43 -0400
+
 tools-meta (3.14) unstable; urgency=medium
 
   * tmux.conf: move status bar to the top and show windows
