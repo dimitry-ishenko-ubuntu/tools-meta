@@ -44,7 +44,7 @@ local function toggle_quickfix()
     vim.cmd((qf.winid > 0) and "cclose" or "copen")
 end
 
-function buffer_close(opts)
+function buffer_unload(opts)
     local cur = vim.api.nvim_get_current_buf()
     local new = nil
 
@@ -91,21 +91,21 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     callback = function() vim.cmd("cwindow") end,
 })
 
-vim.api.nvim_create_user_command("Bclose", buffer_close, {bang = true})
-create_alias("bc", "Bclose")
+vim.api.nvim_create_user_command("Bunload", buffer_unload, {bang = true})
+create_alias("bu", "Bunload")
 
 create_alias("wc", "w\\|wincmd c")
 create_alias("wd", "w\\|bd")
 
 -- Basic maps
 map("n", "<leader>b", "<cmd>ls<cr>:b")
-map("n", "<leader>c", buffer_close)
-map("n", "<leader>C", function() buffer_close({bang = true}) end)
 map("n", "<leader>d", "<cmd>bd<cr>")
 map("n", "<leader>D", "<cmd>bd!<cr>")
 map("n", "<leader>l", toggle_loclist)
 map("n", "<leader>n", "<cmd>enew<cr>")
 map("n", "<leader>q", toggle_quickfix)
+map("n", "<leader>u", buffer_unload)
+map("n", "<leader>U", function() buffer_unload({bang = true}) end)
 
 map("n", "<leader>t", "<cmd>tabnew<cr>")
 map("n", "[t", "<cmd>tabprev<cr>")
