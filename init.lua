@@ -1,4 +1,5 @@
 -- Basic options
+vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = {"menu", "menuone", "noinsert"}
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
