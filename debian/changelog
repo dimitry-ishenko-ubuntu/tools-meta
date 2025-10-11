@@ -1,3 +1,12 @@
+tools-meta (3.17) unstable; urgency=medium
+
+  * tmux.conf: copy to system clipboard
+  * tmux.conf: M-d is used by readline
+  * tmux.conf: use nerd font glyphs
+  * init.lua: use system clipboard
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Fri, 10 Oct 2025 23:04:09 -0400
+
 tools-meta (3.16) unstable; urgency=medium
 
   * tmux.conf: vi mode search
