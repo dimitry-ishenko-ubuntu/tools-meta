@@ -1,3 +1,9 @@
+tools-meta (3.18) unstable; urgency=medium
+
+  * tmux.conf: support underline styles
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Mon, 13 Oct 2025 20:35:23 -0400
+
 tools-meta (3.17) unstable; urgency=medium
 
   * tmux.conf: copy to system clipboard
